@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Euclid Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Galex Portal</h2>
+
+    <form onsubmit="redirectUser(event)">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+
+        <select id="role" required>
+            <option value="">Select Role</option>
+            <option value="admin.html">Admin</option>
+            <option value="professor.html">Professor</option>
+            <option value="student.html">Student</option>
+        </select>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function redirectUser(event) {
+    event.preventDefault();
+    var role = document.getElementById("role").value;
+    if(role !== "") {
+        window.location.href = role;
+    } else {
+        alert("Please select role");
+    }
+}
+</script>
+
+</body>
+</html>
